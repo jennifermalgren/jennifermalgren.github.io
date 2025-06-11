@@ -14,6 +14,7 @@
       background: #e6f0e6; 
       padding: 2rem;
       box-sizing: border-box;
+      font-size: 0.95em;
     }
     nav {
       margin-bottom: 2rem;
@@ -32,48 +33,44 @@
     h1 {
       font-weight: 600;
       color: #4a6650;
-      margin-bottom: 1rem;
-Text-align: center;
+      margin-bottom: 1.5rem;
+      text-align: center;
     }
-    .about-container {
-      display: flex;
-      align-items: flex-start;
-      gap: 2rem;
-      margin-bottom: 2rem;
+
+    figure {
+      float: left;
+      margin: 0 1.5rem 1rem 0;
+      width: 240px;
     }
-    img.profile-photo {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
+
+    img.profile-oliver {
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
       object-fit: cover;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      flex-shrink: 0;
+      display: block;
     }
-img.profile-oliver {
-  width: 240px;
-  height: 320px;
-  border-radius: 16px; 
-  object-fit: cover;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  flex-shrink: 0;
-}
-    .about-text {
-      flex: 1;
+
+    figcaption {
+      font-size: 0.85em;
+      color: #666;
+      text-align: center;
+      margin-top: 0.4rem;
     }
+
     p {
       margin-bottom: 1rem;
-      font-weight: 400;
-      font-size: 1.1em;
     }
+
     @media (max-width: 600px) {
-      .about-container {
-        flex-direction: column;
-        align-items: center;
+      figure {
+        float: none;
+        margin: 0 auto 1.5rem auto;
+        width: 100%;
+        max-width: 300px;
       }
-      img.profile-photo {
-        margin-bottom: 1.5rem;
-      }
-      .about-text {
+      figcaption {
         text-align: center;
       }
     }
@@ -83,12 +80,21 @@ img.profile-oliver {
   <nav><a href="index.html">← Back to Home</a></nav>
   <h1>About Me</h1>
 
-  <div class="about-container">
+  <figure>
     <img src="Oliver.jpeg" alt="Oliver at Zilker" class="profile-oliver" />
-    <div class="about-text">
-      <p>Hello! I'm Jennifer Malgren, a multi-faceted environmental scientist passionate about climate innovation and sustainability. I focus on data-driven solutions and systems thinking to tackle environmental challenges.</p>
-      <p>In my free time, I enjoy reading, walking my Catahoula Leopard Dog – Oliver, exercising, and trying new restaurants.</p>
-    </div>
-  </div>
+    <figcaption>Oliver at Zilker Park</figcaption>
+  </figure>
+
+  <p>Hello! I'm Jennifer Malgren, a multi-faceted environmental scientist passionate about climate innovation and sustainability. I focus on data-driven solutions and systems thinking to tackle environmental challenges.</p>
+
+  <p>I was born and raised in the Bay Area and began my academic journey at the College of San Mateo, where I earned an Associate of Arts in Business Administration in 2016. After some thoughtful exploration of what I wanted in a career, I discovered a deep interest in environmental science and policy. That same year, I packed my bags and moved to Oregon to pursue a dual degree at Portland State University. At PSU, my studies focused on freshwater quality and environmental policy. I was particularly drawn to how science and governance intersect to shape real-world outcomes. In 2019, I graduated with a Bachelor of Science in Environmental Studies & Science, complemented by a minor in Geography.</p>
+
+  <p>After graduation, I transitioned out of a sales role and into the environmental field, starting as a high-level administrative assistant at an environmental testing laboratory. Over time, I advanced to become the laboratory director, where I oversaw operations, quality systems, and regulatory compliance. Alongside this, I also worked in the Watershed Management section at the Oregon Department of Environmental Quality (DEQ), working on a new method of TMDL modeling that utilized Bayesian Nets and probability modeling over traditional models like QUAL2K.</p>
+
+  <p>Although I was thriving in technical roles, I found myself longing for a creative outlet. I’ve always felt energized at the intersection of data and creativity. I decided to pursue a certificate in Geographic Information Systems (GIS) and Remote Sensing through Cal Poly Humboldt, a school with deep personal significance to me and a strong reputation for environmental science. I completed the program in early 2024.</p>
+
+  <p>After six years in Portland, I was ready for a new environment (and sunnier skies). In 2024, shortly after finishing my GIS certification, I accepted a position with the Texas Commission on Environmental Quality. Two weeks later, I was in a U-Haul heading for Austin, excited to begin a new chapter in the Lone Star State.</p>
+
+  <p>In my free time, I enjoy reading, walking my Catahoula Leopard Dog Oliver, exercising, and exploring new restaurants and neighborhoods.</p>
 </body>
 </html>
