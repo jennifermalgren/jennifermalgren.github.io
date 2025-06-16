@@ -2,39 +2,90 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jennifer Malgren | About</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --accent: #96a488;
+      --soft-bg: #f9f8f5;
+      --text-color: #556b4a;
+      --link-hover: #3f5d36;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Poppins', sans-serif;
-      margin: 2rem auto;
-      max-width: 700px;
-      line-height: 1.6;
-      color: #2c3e50;
-      background: #e6f0e6; 
+      margin: 0;
       padding: 2rem;
-      box-sizing: border-box;
+      background-color: #d0dbc6;
+      color: var(--text-color);
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.75;
       font-size: 0.95em;
+      box-sizing: border-box;
+      min-height: 100vh;
+      opacity: 0;
+      transition: opacity 0.8s ease;
     }
+
+    body.loaded {
+      opacity: 1;
+    }
+
     nav {
       margin-bottom: 2rem;
+      text-align: left;
     }
-    a {
-      color: #4a6650; 
+
+    nav a {
+      color: var(--text-color);
       text-decoration: none;
       font-weight: 600;
       border-bottom: 2px solid transparent;
-      transition: border-color 0.3s;
+      transition: border-color 0.3s, color 0.3s;
+      letter-spacing: 0.25px;
     }
-    a:hover {
-      border-bottom: 2px solid #718c66;
-      color: #718c66;
+
+    nav a:hover,
+    nav a:focus {
+      border-bottom: 2px solid var(--accent);
+      color: var(--link-hover);
+      outline: none;
     }
+
     h1 {
       font-weight: 600;
-      color: #4a6650;
+      color: var(--text-color);
       margin-bottom: 1.5rem;
       text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    main.container {
+      background-color: var(--soft-bg);
+      border-radius: 6px;
+      padding: 2rem;
+      box-shadow: 0 4px 10px rgba(100, 125, 100, 0.08);
+      position: relative;
+    }
+
+    main.container::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background-color: var(--accent);
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
     }
 
     figure {
@@ -48,7 +99,7 @@
       height: auto;
       border-radius: 16px;
       object-fit: cover;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 0 15px rgba(100, 125, 100, 0.3);
       display: block;
     }
 
@@ -63,7 +114,48 @@
       margin-bottom: 1rem;
     }
 
+    footer {
+      margin-top: 2rem;
+      font-size: 14px;
+      color: #5e6b60;
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--text-color);
+      font-weight: 500;
+      margin: 0 0.5em;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    footer a:hover,
+    footer a:focus {
+      color: var(--link-hover);
+      text-decoration: underline;
+      outline: none;
+    }
+
+    .wave-bottom {
+      width: 100%;
+      height: 80px;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="20"><path fill="none" stroke="%2396a488" stroke-width="1" d="M0 10 Q 10 0 20 10 T 40 10 T 60 10 T 80 10 T 100 10"/></svg>');
+      background-repeat: repeat-x;
+      background-size: 100px 20px;
+      margin-top: 2rem;
+      animation: waveMotion 10s linear infinite;
+    }
+
+    @keyframes waveMotion {
+      from { background-position-x: 0; }
+      to   { background-position-x: 40px; }
+    }
+
     @media (max-width: 600px) {
+      body {
+        padding: 1rem;
+        max-width: 100%;
+      }
       figure {
         float: none;
         margin: 0 auto 1.5rem auto;
@@ -78,23 +170,39 @@
 </head>
 <body>
   <nav><a href="index.html">← Back to Home</a></nav>
-  <h1>About Me</h1>
 
-  <figure>
-    <img src="Oliver.jpeg" alt="Oliver at Zilker" class="profile-oliver" />
-    <figcaption>Oliver at Zilker Park</figcaption>
-  </figure>
+  <main class="container">
+    <h1>About Me</h1>
 
-  <p>Hello! I'm Jennifer Malgren, a multi-faceted environmental scientist passionate about climate innovation and sustainability. I focus on data-driven solutions and systems thinking to tackle environmental challenges.</p>
+    <figure>
+      <img src="Oliver.jpeg" alt="Oliver, the Catahoula Leopard Dog, enjoying the sunshine at Zilker Park" class="profile-oliver" />
+      <figcaption>Oliver at Zilker Park</figcaption>
+    </figure>
 
-  <p>I was born and raised in the Bay Area and began my academic journey at the College of San Mateo, where I earned an Associate of Arts in Business Administration in 2016. After some thoughtful exploration of what I wanted in a career, I discovered a deep interest in environmental science and policy. That same year, I packed my bags and moved to Oregon to pursue a dual degree at Portland State University. At PSU, my studies focused on freshwater quality and environmental policy. I was particularly drawn to how science and governance intersect to shape real-world outcomes. In 2019, I graduated with a Bachelor of Science in Environmental Studies & Science, complemented by a minor in Geography.</p>
+    <p>Hello! I'm Jennifer Malgren, a multi-faceted environmental scientist passionate about climate innovation and sustainability. I focus on data-driven solutions and systems thinking to tackle environmental challenges.</p>
 
-  <p>After graduation, I transitioned out of a sales role and into the environmental field, starting as a high-level administrative assistant at an environmental testing laboratory. Over time, I advanced to become the laboratory director, where I oversaw operations, quality systems, and regulatory compliance. Alongside this, I also worked in the Watershed Management section at the Oregon Department of Environmental Quality (DEQ), working on a new method of TMDL modeling that utilized Bayesian Nets and probability modeling over traditional models like QUAL2K.</p>
+    <p>I was born and raised in the Bay Area and began my academic journey at the College of San Mateo, where I earned an Associate of Arts in Business Administration in 2016. After some thoughtful exploration of what I wanted in a career, I discovered a deep interest in environmental science and policy. That same year, I packed my bags and moved to Oregon to pursue a dual degree at Portland State University. At PSU, my studies focused on freshwater quality and environmental policy. I was particularly drawn to how science and governance intersect to shape real-world outcomes. In 2019, I graduated with a Bachelor of Science in Environmental Studies & Science, complemented by a minor in Geography.</p>
 
-  <p>Although I was thriving in technical roles, I found myself longing for a creative outlet. I’ve always felt energized at the intersection of data and creativity. I decided to pursue a certificate in Geographic Information Systems (GIS) and Remote Sensing through Cal Poly Humboldt, a school with deep personal significance to me and a strong reputation for environmental science. I completed the program in early 2024.</p>
+    <p>After graduation, I transitioned out of a sales role and into the environmental field, starting as a high-level administrative assistant at an environmental testing laboratory. Over time, I advanced to become the laboratory director, where I oversaw operations, quality systems, and regulatory compliance. Alongside this, I also worked in the Watershed Management section at the Oregon Department of Environmental Quality (DEQ), working on a new method of TMDL modeling that utilized Bayesian Nets and probability modeling over traditional models like QUAL2K.</p>
 
-  <p>After six years in Portland, I was ready for a new environment (and sunnier skies). In 2024, shortly after finishing my GIS certification, I accepted a position with the Texas Commission on Environmental Quality. Two weeks later, I was in a U-Haul heading for Austin, excited to begin a new chapter in the Lone Star State.</p>
+    <p>Although I was thriving in technical roles, I found myself longing for a creative outlet. I’ve always felt energized at the intersection of data and creativity. I decided to pursue a certificate in Geographic Information Systems (GIS) and Remote Sensing through Cal Poly Humboldt, a school with deep personal significance to me and a strong reputation for environmental science. I completed the program in early 2024.</p>
 
-  <p>In my free time, I enjoy reading, walking my Catahoula Leopard Dog Oliver, exercising, and exploring new restaurants and neighborhoods.</p>
+    <p>After six years in Portland, I was ready for a new environment (and sunnier skies). In 2024, shortly after finishing my GIS certification, I accepted a position with the Texas Commission on Environmental Quality. Two weeks later, I was in a U-Haul heading for Austin, excited to begin a new chapter in the Lone Star State.</p>
+
+    <p>In my free time, I enjoy reading, walking my Catahoula Leopard Dog Oliver, exercising, and exploring new restaurants and neighborhoods.</p>
+  </main>
+
+  <footer>
+    <a href="mailto:jennifer.malgren@gmail.com">Contact Me</a> |
+    <a href="https://www.linkedin.com/in/jennifermalgren/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  </footer>
+
+  <div class="wave-bottom"></div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('loaded');
+    });
+  </script>
 </body>
 </html>
