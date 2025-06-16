@@ -2,69 +2,184 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Professional - Jennifer Malgren</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jennifer Malgren | Professional</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --accent: #96a488;
+      --soft-bg: #f9f8f5;
+      --text-color: #556b4a;
+      --link-hover: #3f5d36;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Poppins', sans-serif;
-      margin: 2rem auto;
-      max-width: 700px;
-      line-height: 1.6;
-      color: #2c3e50;
-      background: #e6f0e6; 
+      margin: 0;
       padding: 2rem;
+      background-color: #d0dbc6;
+      color: var(--text-color);
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.75;
+      font-size: 0.95em;
       box-sizing: border-box;
-      text-align: left;
+      min-height: 100vh;
+      opacity: 0;
+      transition: opacity 0.8s ease;
     }
+
+    body.loaded {
+      opacity: 1;
+    }
+
     nav {
       margin-bottom: 2rem;
+      text-align: left;
     }
-    a {
-      color: #4a6650; 
+
+    nav a {
+      color: var(--text-color);
       text-decoration: none;
       font-weight: 600;
       border-bottom: 2px solid transparent;
-      transition: border-color 0.3s;
+      transition: border-color 0.3s, color 0.3s;
+      letter-spacing: 0.25px;
     }
-    a:hover {
-      border-bottom: 2px solid #718c66;
-      color: #718c66;
+
+    nav a:hover,
+    nav a:focus {
+      border-bottom: 2px solid var(--accent);
+      color: var(--link-hover);
+      outline: none;
     }
+
     h1 {
       font-weight: 600;
-      color: #4a6650;
-      margin-bottom: 1rem;
+      color: var(--text-color);
+      margin-bottom: 1.5rem;
+      text-align: center;
+      letter-spacing: 0.5px;
     }
+
+    main.container {
+      background-color: var(--soft-bg);
+      border-radius: 6px;
+      padding: 2rem;
+      box-shadow: 0 4px 10px rgba(100, 125, 100, 0.08);
+      position: relative;
+    }
+
+    main.container::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background-color: var(--accent);
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+    }
+
     p {
       margin-bottom: 1rem;
-      font-weight: 400;
-      font-size: 1.1em;
     }
+
     ul {
       margin-top: 0;
       padding-left: 1.2rem;
-      font-size: 1.1em;
+      font-size: 1.05em;
+      margin-bottom: 1rem;
     }
+
     ul li {
       margin-bottom: 0.6rem;
+    }
+
+    footer {
+      margin-top: 2rem;
+      font-size: 14px;
+      color: #5e6b60;
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--text-color);
+      font-weight: 500;
+      margin: 0 0.5em;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    footer a:hover,
+    footer a:focus {
+      color: var(--link-hover);
+      text-decoration: underline;
+      outline: none;
+    }
+
+    .wave-bottom {
+      width: 100%;
+      height: 80px;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="20"><path fill="none" stroke="%2396a488" stroke-width="1" d="M0 10 Q 10 0 20 10 T 40 10 T 60 10 T 80 10 T 100 10"/></svg>');
+      background-repeat: repeat-x;
+      background-size: 100px 20px;
+      margin-top: 2rem;
+      animation: waveMotion 10s linear infinite;
+    }
+
+    @keyframes waveMotion {
+      from { background-position-x: 0; }
+      to   { background-position-x: 40px; }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem;
+        max-width: 100%;
+      }
     }
   </style>
 </head>
 <body>
   <nav><a href="index.html">← Back to Home</a></nav>
-  <h1>Professional</h1>
 
-  <p><strong>Education:</strong> Bachelor of Science in Environmental Science, Minor in Geography</p>
+  <main class="container">
+    <h1>Professional</h1>
 
-  <p><strong>Specialties include:</strong></p>
-  <ul>
-    <li>Environmental permitting (CWA, CDWA, NEPA, ESA, Environmental Assessments)</li>
-    <li>Standardization and methodology (ISO/IEC 17025:2017, NELAC, NELAP, NIOSH)</li>
-    <li>Technical writing (SOPs, QAPP, WQMP)</li>
-    <li>Geographic Information Systems (GIS)</li>
-    <li>Regulatory compliance and environmental data analysis</li>
-  </ul>
+    <p><strong>Education:</strong> Bachelor of Science in Environmental Science, Minor in Geography</p>
 
-  <p>More content coming soon!</p>
+    <p><strong>Specialties include:</strong></p>
+    <ul>
+      <li>Environmental permitting (CWA, CDWA, NEPA, ESA, Environmental Assessments)</li>
+      <li>Standardization and methodology (ISO/IEC 17025:2017, NELAC, NELAP, NIOSH)</li>
+      <li>Technical writing (SOPs, QAPP, WQMP)</li>
+      <li>Geographic Information Systems (GIS)</li>
+      <li>Remote Sensing</li>
+      <li>Regulatory compliance and environmental data analysis</li>
+    </ul>
+
+    <p>More content coming soon!</p>
+  </main>
+
+  <footer>
+    <a href="mailto:jennifer.malgren@gmail.com">Contact Me</a> |
+    <a href="https://www.linkedin.com/in/jennifermalgren/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  </footer>
+
+  <div class="wave-bottom"></div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('loaded');
+    });
+  </script>
 </body>
 </html>
