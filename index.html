@@ -2,28 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jennifer Malgren</title>
-
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jennifer Malgren | Home</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-
-
-  <meta property="og:title" content="Jennifer S. Malgren – Environmental Scientist" />
-  <meta property="og:description" content="Environmental scientist focused on climate innovation, systems thinking, and sustainability strategy." />
-  <meta property="og:type" content="website" />
-
   <style>
+    :root {
+      --accent: #96a488;
+      --soft-bg: #f9f8f5;
+      --text-color: #556b4a;
+      --link-hover: #3f5d36;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 2rem;
-      background: #e6f0e6;
-      color: #2c3e50;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+      background-color: #d0dbc6;
+      color: var(--text-color);
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.75;
+      font-size: 0.95em;
+      box-sizing: border-box;
       min-height: 100vh;
       opacity: 0;
       transition: opacity 0.8s ease;
@@ -33,128 +38,165 @@
       opacity: 1;
     }
 
-    header {
-      margin-bottom: 1rem;
-    }
-
     h1 {
-      font-size: 40px;
       font-weight: 600;
-      color: #4a6650;
-      margin: 0.2em 0;
-    }
-
-    h2 {
-      font-size: 16px;
-      font-weight: 500;
-      color: #607b66;
-      margin: 0.2em 0 0.8em 0;
+      color: var(--text-color);
+      margin-bottom: 0;
+      text-align: center;
+      letter-spacing: 0.5px;
+      font-size: 2.25rem;
     }
 
     h3 {
-      font-size: 20px;
       font-weight: 400;
-      color: #4a6650;
-      margin-top: 0;
+      margin-top: 0.2rem;
+      text-align: center;
+      font-size: 1.25rem;
+      color: #607b66;
+    }
+
+    main.container {
+      background-color: var(--soft-bg);
+      border-radius: 6px;
+      padding: 2rem;
+      box-shadow: 0 4px 10px rgba(100, 125, 100, 0.08);
+      position: relative;
+    }
+
+    main.container::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background-color: var(--accent);
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
     }
 
     img.profile-photo {
-      width: 180px;
-      height: 180px;
+      display: block;
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
       object-fit: cover;
-      margin: 1.5em 0;
-      box-shadow: 0 0 15px rgba(100, 125, 100, 0.4);
+      margin: 1em auto 2em auto;
+      box-shadow: 0 0 15px rgba(100, 125, 100, 0.25);
     }
 
     p {
-      font-size: 18px;
-      max-width: 600px;
-      margin: 1em 0 2em 0;
-    }
-
-    nav {
-      margin-top: 1em;
-    }
-
-    a {
-      margin: 0 1em;
-      text-decoration: none;
-      color: #4a6650;
-      font-weight: 600;
-      font-size: 16px;
-      border-bottom: 2px solid transparent;
-      transition: border-color 0.3s, color 0.3s;
-    }
-
-    a:hover {
-      border-bottom: 2px solid #718c66;
-      color: #718c66;
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      text-align: center;
     }
 
     footer {
-      margin-top: auto;
-      padding-top: 2em;
+      margin-top: 2rem;
       font-size: 14px;
       color: #5e6b60;
+      text-align: center;
     }
 
-    footer a {
-      color: #4a6650;
-      font-weight: 500;
-      margin: 0 0.5em;
+    /* Footer nav - horizontal link row */
+    .footer-nav {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      font-size: 1rem;
     }
 
-    footer a:hover {
-      color: #718c66;
-      text-decoration: underline;
+    .footer-nav a {
+      color: var(--text-color);
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: color 0.3s, border-bottom-color 0.3s;
+      padding: 0 2px;
+    }
+
+    .footer-nav a:hover,
+    .footer-nav a:focus {
+      color: var(--link-hover);
+      border-bottom-color: var(--link-hover);
+      outline: none;
+    }
+
+    .footer-nav .separator {
+      color: var(--accent);
+      font-family: monospace;
+      font-weight: 600;
+      font-size: 1.25rem;
+      user-select: none;
+    }
+
+    .wave-bottom {
+      width: 100%;
+      height: 80px;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="20"><path fill="none" stroke="%2396a488" stroke-width="1" d="M0 10 Q 10 0 20 10 T 40 10 T 60 10 T 80 10 T 100 10"/></svg>');
+      background-repeat: repeat-x;
+      background-size: 100px 20px;
+      margin-top: 2rem;
+      animation: waveMotion 10s linear infinite;
+    }
+
+    @keyframes waveMotion {
+      from { background-position-x: 0; }
+      to   { background-position-x: 40px; }
     }
 
     @media (max-width: 600px) {
       body {
         padding: 1rem;
+        max-width: 100%;
       }
 
       h1 {
-        font-size: 30px;
+        font-size: 1.8rem;
       }
 
-      h2 {
-        font-size: 14px;
+      h3 {
+        font-size: 1.1rem;
       }
 
       p {
-        font-size: 16px;
+        font-size: 1rem;
       }
 
-      a {
-        font-size: 14px;
+      .footer-nav {
+        font-size: 0.95rem;
+        gap: 4px;
       }
     }
   </style>
 </head>
 <body>
-  <header>
+  <main class="container">
     <h1>Jennifer S. Malgren</h1>
     <h3>Austin, Texas</h3>
-    <h2>Environmental Science · Policy · Data Strategy</h2>
-  </header>
 
-  <img src="Jennifer.jpeg" alt="Jennifer Malgren" class="profile-photo" />
+    <img src="Jennifer.jpeg" alt="Jennifer Malgren" class="profile-photo" />
 
-  <main>
-    <p>Environmental scientist, systems thinker, and advocate for climate-focused innovation.</p>
-
-    <nav>
-      <a href="about.html">About Me</a> | 
-      <a href="professional.html">Professional</a>
-    </nav>
+    <p>Hi, I'm Jennifer. I’m passionate about tackling environmental challenges at the intersection where big ideas meet the systems that make them work (or don’t). As a creative problem solver, I use data-driven insights and curiosity to explore climate-focused innovations. I’m always looking for ways to make change feel meaningful and manageable.</p>
   </main>
 
   <footer>
-    <a href="mailto:jennifer.malgren@gmail.com">Contact Me</a> |
-    <a href="https://www.linkedin.com/in/jennifermalgren/" target="_blank">LinkedIn</a>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="about.html">About Me</a>
+      <span class="separator" aria-hidden="true">|</span>
+      <a href="professional.html">Professional</a>
+      <span class="separator" aria-hidden="true">|</span>
+      <a href="mailto:jennifer.malgren@gmail.com">Contact Me</a>
+      <span class="separator" aria-hidden="true">|</span>
+      <a href="https://www.linkedin.com/in/jennifermalgren/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </nav>
   </footer>
+
+  <div class="wave-bottom"></div>
 
   <script>
     window.addEventListener('DOMContentLoaded', () => {
