@@ -88,19 +88,22 @@
       border-top-right-radius: 6px;
     }
 
-    p {
-      margin-bottom: 1rem;
+    details {
+      margin-bottom: 1.5rem;
+      background: white;
+      padding: 1rem;
+      border-left: 4px solid var(--accent);
+      border-radius: 4px;
     }
 
-    ul {
-      margin-top: 0;
-      padding-left: 1.2rem;
-      font-size: 1.05em;
-      margin-bottom: 1rem;
+    details summary {
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--accent);
     }
 
-    ul li {
-      margin-bottom: 0.6rem;
+    summary::-webkit-details-marker {
+      display: none;
     }
 
     footer {
@@ -125,6 +128,33 @@
       outline: none;
     }
 
+    .project-section {
+  padding: 1.5em;
+  margin-bottom: 2em;
+  border-left: 4px solid #3a6351;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.project-section h3 {
+  margin-top: 0;
+  font-size: 1.2em;
+  color: #2a4740;
+}
+
+.project-section ul {
+  padding-left: 1.2em;
+  margin: 0.5em 0 0 0;
+  list-style-type: disc;
+}
+
+.project-section li {
+  margin-bottom: 0.75em;
+  line-height: 1.5;
+}
+
+
     .wave-bottom {
       width: 100%;
       height: 80px;
@@ -140,33 +170,191 @@
       to   { background-position-x: 40px; }
     }
 
-    @media (max-width: 600px) {
-      body {
-        padding: 1rem;
-        max-width: 100%;
-      }
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .tab-button {
+      background: var(--soft-bg);
+      border: 2px solid var(--accent);
+      border-radius: 6px;
+      padding: 0.5rem 1.25rem;
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--accent);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .tab-button.active,
+    .tab-button:hover,
+    .tab-button:focus {
+      background: var(--accent);
+      color: white;
+      outline: none;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    h2 {
+      font-weight: 600;
+      color: var(--text-color);
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
     }
   </style>
 </head>
 <body>
   <nav><a href="index.html">← Back to Home</a></nav>
 
+  <div class="tabs" role="tablist" aria-label="Content Tabs">
+    <button class="tab-button active" data-tab="professional" role="tab" aria-selected="true" aria-controls="professional" id="tab-professional">Career Overview</button>
+    <button class="tab-button" data-tab="education" role="tab" aria-selected="false" aria-controls="education" id="tab-education">Education &amp; Coursework</button>
+    <button class="tab-button" data-tab="projects" role="tab" aria-selected="false" aria-controls="projects" id="tab-projects">Projects & Skill Applications</button>
+  </div>
+
   <main class="container">
-    <h1>Professional</h1>
+    <!-- PROFESSIONAL TAB -->
+    <section id="professional" class="tab-content active" role="tabpanel" tabindex="0" aria-labelledby="tab-professional">
+      <h1>Career Overview</h1>
+      <p>Across every role I’ve held, I’ve looked for opportunities to improve systems, clarify processes, and ensure the highest level of environmental integrity. Below are reflections on my professional path, contributions I’ve made, and the perspective I bring to multidisciplinary work.</p>
 
-    <p><strong>Education:</strong> Bachelor of Science in Environmental Science, Minor in Geography</p>
+      <h2>Texas Commission on Environmental Quality</h2>
+      <p>I work in the Underground Injection Control (UIC) section, managing applications and compliance for Class I, III, and V wells. This role blends regulatory interpretation with cross sector collaboration, where I help translate complex environmental standards into clear, actionable pathways for regulated entities.</p>
+      <details><summary>Contributions</summary>
+        <ul>
+          <li>Lead UIC permit and project reviews from intake through decision, including public notices, technical evaluations, compliance history checks, and interagency coordination</li>
+          <li>Support permittees and consultants through state and federal compliance requirements, often serving as a first point of contact</li>
+          <li>Coordinate with geologists, engineers, and legal specialists to collaboratively address complex permitting challenges and ensure technical defensibility.</li>
+          <li>Initiated and am developing a TCEQ permitted well map to modernize data access and improve program transparency.</li>
+          <li>Identify system inefficiencies and advocate for process improvements that reduce administrative burden while maintaining regulatory rigor.</li>
+          <li>Balance environmental protection and stakeholder service, aiming to reduce ambiguity surrounding regulatory pathways. </li>
 
-    <p><strong>Specialties include:</strong></p>
+        </ul>
+      </details>
+      <details><summary>Reflections & Growth</summary>
+        <p>This role deepened my respect for environmental regulation as a collaborative process. I’ve grown in my ability to hold the line on public protections while guiding others through bureaucratic systems with clarity and fairness. The mapping initiative in particular speaks to my desire to leave systems more usable than I found them.</p>
+      </details>
+
+      <h2>Oregon Department of Environmental Quality</h2>
+      <p>At DEQ, I worked on an initiative to evaluate whether Bayesian modeling could support statewide improvements to Oregon’s Total Maximum Daily Load (TMDL) program.</p>
+      <details><summary>Contributions</summary>
+        <ul>
+          <li>Researched Bayesian networks and probabilistic modeling approaches to support more adaptive, data informed water quality deicison mkaing.</li>
+          <li>Used Netica and R tools (rstan, bayesplot, posterior) to explore modeling workflows tailored to TMDL and Integrated Report needs, with emphasis on policy applicability.</li>
+          <li>Developed reproducable prototype workflows that integrated 303(d) list priorities and explored uncertainty in load allocation scenarios.</li>
+          <li>Evalutated technical feasibility, policy alignment, and communication needs to help senior staff assess implementation tradeoffs.</li>
+          <li>Synthesized findings into briefing materials to support cross disciplinary decision-making within DEQ's Water Quality Divison and Watershed Management Section.</li>
+
+        </ul>
+      </details>
+      <details><summary>Reflections & Growth</summary>
+        <p>This role reinforced my enthusiasm for evidence-based policy and reproducible science. It also shaped how I approach innovation within government, pushing for tools that are not only rigorous but also accessible.</p>
+      </details>
+
+      <h2>JSE Labs, Inc.</h2>
+      <p>At JSE Labs, I oversaw operations and quality for an environmental testing laboratory while initiating a period of transformation. When I began, the lab was fully analog; by the time I left the laboratory was operating digitally under my leadership and fully ISO/IEC 17025:2017 compliant.</p>
+      <details><summary>Contributions</summary>
+        <ul>
+          <li>Directed daily laboratory operations and served as Authorized Signatory for all accreditation activities.</li>
+          <li>Spearheaded a full laboratory modernization effort, including instrumentation upgrades and a complete system overhaul, increasing efficiency and supporting digital operations under ISO/IEC 17025:2017.</li>
+          <li>Maintained and optimized the LIMS database (MS Access-based), ensuring traceability and reporting accuracy.</li>
+          <li>Created SOPs, training documentation, and audit-ready quality manual aligned made ISO/IEC standards.</li>
+          <li>Led the strategic overhaul of the lead (Pb) testing laboratory, coordinating all phases from planning through implementation.</li>
+          <li>Developed risk mitigation strategies and conducted financial analysis to assess ROI for the lead (Pb) lab upgrade, ensuring alignment with organizational goals.</li>
+        </ul>
+      </details>
+      <details><summary>Reflections & Growth</summary>
+        <p>This experience shaped how I think about structure and scalability. Building something durable under audit conditions gave me a strong foundation in regulatory quality, but more importantly, I learned how to foster trust through documentation, reliability, and continuous improvement.</p>
+      </details>
+    </section>
+
+    <!-- EDUCATION TAB -->
+    <section id="education" class="tab-content" role="tabpanel" tabindex="0" aria-labelledby="tab-education" hidden>
+      <h1>Education &amp; Coursework</h1>
+      <p>My academic background combines environmental science, regulatory policy, and geospatial analysis. These programs gave me the tools to think critically across disciplines and communicate technical material clearly and persuasively.</p>
+
+      <details>
+        <summary>Portland State University</summary>
+        <p><strong>Dual Bachelor of Science Degrees:</strong> Environmental Studies & Environmental Science, Minor in Geography</p>
+        <ul>
+          <li><strong>Coursework:</strong> Water Quality Policy & Management, Environmental Chemistry, Technical Writing, Environmental Data Analysis, Science and Policy in Environmental Management, Soil Science Methods, Geomorphology</li>
+          <li><strong>NEPA Training:</strong> Participated in EIS/EA analysis and attribute-specific evaluations (e.g., biological, hydrological, and hazardous materials impacts) for permitting compliance and interagency review.</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Cal Poly Humboldt</summary>
+        <p><strong>Geospatial Certificate</strong> (GIS, Remote Sensing, Cartography emphasis)</p>
+        <ul>
+          <li><strong>Project-based coursework:</strong> GIS modeling (routing, site selection), remote sensing (classification, NDVI, burn severity), cartography, and raster analysis.</li>
+          <li><strong>Tools & Skills:</strong> ArcGIS Pro, ENVI, LiDAR, spatial interpolation, map algebra, satellite data analysis, and print-quality map design.</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>College of San Mateo</summary>
+        <p><strong>Associate of Arts in Business Administration</strong></p>
+      </details>
+    </section>
+
+<!-- PROJECTS TAB -->
+<section id="projects" class="tab-content" role="tabpanel" tabindex="0" aria-labelledby="tab-projects" hidden>
+  <h1>Projects &amp; Skill Applications</h1>
+  <p>Below are selected projects that show how I apply scientific, spatial, and regulatory knowledge in practical and creative ways. Many reflect my ability to work across data, policy, and communication goals simultaneously.</p>
+
+  <div class="project-section">
+    <h3>Geospatial Modeling & Habitat Conservation</h3>
     <ul>
-      <li>Environmental permitting (CWA, CDWA, NEPA, ESA, Environmental Assessments)</li>
-      <li>Standardization and methodology (ISO/IEC 17025:2017, NELAC, NELAP, NIOSH)</li>
-      <li>Technical writing (SOPs, QAPP, WQMP)</li>
-      <li>Geographic Information Systems (GIS)</li>
-      <li>Remote Sensing</li>
-      <li>Regulatory compliance and environmental data analysis</li>
+      <li>Built a wildfire risk model for sage grouse habitat using slope, aspect, elevation, and land cover data in ArcGIS Pro. Integrated BLM and SageCon datasets to identify threats to Oregon’s Priority Areas for Conservation and support regional planning efforts.</li>
+      <li>Designed models in ArcGIS Pro for vehicle routing, demand-based site selection, and least-cost path analysis to explore how spatial tools can solve logistical and environmental siting challenges.</li>
+      <li>Created a mini-atlas highlighting endangered salmonid habitats in Oregon, with a focus on clear, accessible cartographic design. Final outputs prioritized both visual storytelling and conservation education.</li>
     </ul>
+  </div>
 
-    <p>More content coming soon!</p>
+  <div class="project-section">
+    <h3>Remote Sensing & Environmental Monitoring</h3>
+    <ul>
+      <li>Analyzed coastal light pollution patterns using VIIRS and Landsat imagery to understand impacts on sea turtle nesting in Florida. Used ENVI for spectral reflectance and change detection along nesting zones.</li>
+      <li>Completed a remote sensing capstone that applied NDVI, burn severity, emissivity, photogrammetry, and lidar data to assess land surface changes and vegetation health.</li>
+    </ul>
+  </div>
+
+  <div class="project-section">
+    <h3>Regulatory Analysis & Environmental Planning</h3>
+    <ul>
+      <li>Participated in a NEPA environmental review practicum through Portland State, where I assessed impacts on physical and biological resources and co-authored sections of a group EIS. Work included regulatory synthesis, alternatives analysis, and public risk framing.</li>
+      <li>At Oregon DEQ, explored how Bayesian modeling could modernize watershed planning. Built conceptual models, evaluated tools like Stan and Netica, and developed reproducible workflows to support long-term regulatory updates.</li>
+    </ul>
+  </div>
+
+  <div class="project-section">
+    <h3>Systems Modernization & Technical Leadership</h3>
+    <ul>
+      <li>Led a full computer system upgrade at a state environmental lab. Assessed software compatibility, gathered staff input, and coordinated implementation to improve efficiency, quality control, and data workflows.</li>
+      <li>Directed a lead (Pb) lab redesign, combining technical research, regulatory review, and staff collaboration. Proposed a comprehensive update that improved safety, functionality, and long-term cost-effectiveness.</li>
+    </ul>
+  </div>
+
+  <div class="project-section">
+    <h3>Fieldwork & Global Environmental Perspectives</h3>
+    <ul>
+      <li>Completed a study abroad capstone in Costa Rica focused on biodiversity, ecological tourism, and environmental reflection. Synthesized academic and field experiences into final writing and presentations on conservation and cultural exchange.</li>
+    </ul>
+  </div>
+</section>
+
+
   </main>
 
   <footer>
@@ -179,6 +367,30 @@
   <script>
     window.addEventListener('DOMContentLoaded', () => {
       document.body.classList.add('loaded');
+
+      const tabButtons = document.querySelectorAll('.tab-button');
+      const tabContents = document.querySelectorAll('.tab-content');
+
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          tabButtons.forEach(btn => {
+            btn.classList.remove('active');
+            btn.setAttribute('aria-selected', 'false');
+          });
+          tabContents.forEach(section => {
+            section.classList.remove('active');
+            section.setAttribute('hidden', '');
+          });
+
+          button.classList.add('active');
+          button.setAttribute('aria-selected', 'true');
+          const tabId = button.dataset.tab;
+          const content = document.getElementById(tabId);
+          content.classList.add('active');
+          content.removeAttribute('hidden');
+          content.focus();
+        });
+      });
     });
   </script>
 </body>
